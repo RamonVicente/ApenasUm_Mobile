@@ -1,16 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.design.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".gui.NewCardActivity">
+>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".gui.NewCardActivity"
+            android:padding="16dp"
+            android:orientation="vertical"
+    >
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Cadastro"
+                  android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+        />
 
 
-    <ImageView android:layout_width="match_parent" android:layout_height="wrap_content"
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:hint="Banco"
+                  android:layout_marginTop="4dp"
+                  android:id="@+id/bank"
+        />
 
-    />
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:hint="Bandeira"
+                  android:id="@+id/flag"
+
+        />
+
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:hint="Código"
+                  android:id="@+id/code"
+
+        />
+
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:hint="Debito/Credito"
+                  android:id="@+id/type"
+
+        />
 
 
-</LinearLayout>
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:hint="Cvv"
+                  android:id="@+id/cvv"
+
+        />
+
+    </LinearLayout>
+
+    <android.support.design.bottomappbar.BottomAppBar
+            android:id="@+id/bottom_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:menu="@menu/bottom_appbar_menu"
+            app:fabAlignmentMode="center"
+            app:backgroundTint="@color/colorPrimary"
+            app:fabCradleVerticalOffset="12dp">
+
+    </android.support.design.bottomappbar.BottomAppBar>
+
+    <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:src="@drawable/ic_save_black_24dp"
+            app:layout_anchor="@+id/bottom_appbar"/>
+
+
+</android.support.design.widget.CoordinatorLayout>
+
+

@@ -8,6 +8,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.apenasum.R;
@@ -16,6 +17,7 @@ import com.apenasum.gui.HomeActivity;
 import com.apenasum.gui.NewCardActivity;
 import com.apenasum.model.BankCard;
 import com.apenasum.requests.CardRequest;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +29,7 @@ import java.util.List;
 public class CardFragment extends Fragment {
 
     List<BankCard> bankCards = new ArrayList<>();
+    ListView list_cards;
 
     public CardFragment() {
         // Required empty public constructor
@@ -44,7 +47,7 @@ public class CardFragment extends Fragment {
 
 
         CardAdapter cardAdapter = new CardAdapter(R.layout.item_card, getActivity(), bankCards);
-        ListView list_cards = v.findViewById(R.id.list_cards);
+        list_cards = v.findViewById(R.id.list_cards);
         list_cards.setAdapter(cardAdapter);
         list_cards.deferNotifyDataSetChanged();
 
@@ -52,7 +55,7 @@ public class CardFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), NewCardActivity.class));
+                startActivityForResult(new Intent(getActivity(), NewCardActivity.class), 1);
             }
         });
 
@@ -67,7 +70,7 @@ public class CardFragment extends Fragment {
         bankCard.setCode("1251.2531.2343-23");
         bankCard.setFlag("Visa");
         bankCard.setNameBank("Itau");
-        bankCard.setSecurityCode(123);
+        bankCard.setSecurityCode("123");
         bankCard.setType("Debito");
         bankCards.add(bankCard);
 
@@ -75,7 +78,7 @@ public class CardFragment extends Fragment {
         bankCard.setCode("3124.6442.7532-41");
         bankCard.setFlag("MasterCard");
         bankCard.setNameBank("NuBank");
-        bankCard.setSecurityCode(534);
+        bankCard.setSecurityCode("534");
         bankCard.setType("Credito");
         bankCards.add(bankCard);
 
@@ -83,7 +86,7 @@ public class CardFragment extends Fragment {
         bankCard.setCode("7456.5427.9563-93");
         bankCard.setFlag("Visa");
         bankCard.setNameBank("Santander");
-        bankCard.setSecurityCode(814);
+        bankCard.setSecurityCode("814");
         bankCard.setType("Debito");
         bankCards.add(bankCard);
 
@@ -91,7 +94,7 @@ public class CardFragment extends Fragment {
         bankCard.setCode("73513.4142.9685-21");
         bankCard.setFlag("MasterCard");
         bankCard.setNameBank("Santander");
-        bankCard.setSecurityCode(913);
+        bankCard.setSecurityCode("913");
         bankCard.setType("Debito");
         bankCards.add(bankCard);
 
@@ -99,7 +102,7 @@ public class CardFragment extends Fragment {
         bankCard.setCode("1251.2531.2343-23");
         bankCard.setFlag("MasterCard");
         bankCard.setNameBank("Bradesco");
-        bankCard.setSecurityCode(794);
+        bankCard.setSecurityCode("794");
         bankCard.setType("Credito");
         bankCards.add(bankCard);
 
@@ -107,9 +110,20 @@ public class CardFragment extends Fragment {
         bankCard.setCode("1251.2531.2343-23");
         bankCard.setFlag("Visa");
         bankCard.setNameBank("NuBank");
-        bankCard.setSecurityCode(687);
+        bankCard.setSecurityCode("687");
         bankCard.setType("Debito");
         bankCards.add(bankCard);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        Gson gson = new Gson();
+        String strObj = data.getStringExtra("obj");
+        BankCard obj = gson.fromJson(strObj, BankCard.class);
+        bankCards.add(obj);
+        ((ArrayAdapter) list_cards.getAdapter()).notifyDataSetChanged();
     }
 
 }

@@ -4,7 +4,7 @@ public class BankCard {
 
     private String code;
     private String nameBank;
-    private int securityCode;
+    private String securityCode;
     private String flag;
     private String type;
 
@@ -33,11 +33,11 @@ public class BankCard {
     }
 
 
-    public int getSecurityCode() {
+    public String getSecurityCode() {
         return securityCode;
     }
 
-    public void setSecurityCode(int securityCode) {
+    public void setSecurityCode(String securityCode) {
         this.securityCode = securityCode;
     }
 
