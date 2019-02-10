@@ -1,4 +1,4 @@
-package com.apenasum.controller;
+package com.apenasum.gui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
