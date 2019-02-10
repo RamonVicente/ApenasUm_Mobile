@@ -8,4 +8,7 @@
     <string name="title_activity_register">RegisterActivity</string>
     <string name="forgot_pass">esqueci a senha</string>
     <string name="save">Salvar</string>
+    <string name="check_connection">Verificando a conexão</string>
+    <string name="login_sucess">Logado com suceso!</string>
+    <string name="login_error">Não foi possível conectar a sua conta.</string>
 </resources>
