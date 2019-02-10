@@ -3,4 +3,11 @@
     <string name="email_login">Email</string>
     <string name="senha_login">Password</string>
     <string name="btn_login">Login</string>
+
+    <!--Register-->
+    <string name="name_register">First Name</string>
+    <string name="lastName_register">Last Name</string>
+    <string name="cpf_register">CPF</string>
+    <string name="email_register">Email</string>
+    <string name="phone_register">Phone</string>
 </resources>

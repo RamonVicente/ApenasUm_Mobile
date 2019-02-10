@@ -29,5 +29,4 @@
             android:onClick="doLogin"
             android:text="@string/btn_login" />
 
-
 </LinearLayout>
