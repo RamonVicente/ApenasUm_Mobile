@@ -4,17 +4,18 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+android:padding="6dp">
     <ImageView
             android:id="@+id/image_card"
             android:layout_width="match_parent"
             android:layout_height="157dp"
-            android:paddingTop="10dp"
-            android:layout_gravity="center" tools:srcCompat="@drawable/apenas_um" android:visibility="visible"/>
 
-            android:visibility="visible" app:srcCompat="@drawable/Apenas Um"/>
+            android:layout_gravity="center" android:src="@drawable/apenas_um"/>
+
     <ListView
             android:id="@+id/categoria_list_view"
+            android:layout_marginTop="25dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></ListView>
 

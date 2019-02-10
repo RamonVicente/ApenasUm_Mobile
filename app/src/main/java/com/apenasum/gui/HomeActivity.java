@@ -10,6 +10,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import com.apenasum.fragments.CardFragment;
 import com.apenasum.R;
 
@@ -40,16 +41,12 @@ public class HomeActivity extends AppCompatActivity {
                 String tag = "";
                 Class fragmentClass = null;
                 switch (item.getItemId()) {
-                    case R.id.app_bar_profile:
 
-                        break;
-                    case R.id.app_bar_card:
-                        fragment = new CardFragment();
-                        fab.setImageResource(R.drawable.ic_outline_add_24px);
 
-                        break;
                     case R.id.app_bar_transaction:
                         // fab.setImageResource(R.drawable.search);
+                        fab.setVisibility(View.GONE);
+                        fragment = new TransactionFragment();
                         break;
                     default:
 
@@ -68,7 +65,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        
+
     }
 
     public void chageFragment(Fragment newFragment) {

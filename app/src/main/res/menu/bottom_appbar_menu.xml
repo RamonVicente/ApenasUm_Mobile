@@ -3,17 +3,8 @@
       xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-            android:id="@+id/app_bar_profile"
-            android:icon="@drawable/ic_round_person_24px"
-            android:title="@string/profie"
-            app:showAsAction="ifRoom"/>
 
-    <item
-            android:id="@+id/app_bar_card"
-            android:icon="@drawable/ic_round_credit_card_24px"
-            android:title="@string/cards"
-            app:showAsAction="ifRoom"/>
+
     <item
             android:id="@+id/app_bar_transaction"
             android:icon="@drawable/ic_round_compare_arrows_24px"

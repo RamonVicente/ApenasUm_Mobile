@@ -27,15 +27,17 @@ public class TransactionFragment extends Fragment {
         List<Transaction> transactions = new ArrayList<Transaction>();
         Transaction transaction1 = new Transaction();
         transaction1.setNomeLogista("Seu João das Coxinhas");
-        transaction1.setValor("21.50");
+        transaction1.setValor("R$21.50");
 
         Transaction transaction2 = new Transaction();
         transaction2.setNomeLogista("Atacado Feirão");
-        transaction2.setValor("12.50");
+        transaction2.setValor("R$12.50");
 
         Transaction transaction3 = new Transaction();
-        transaction2.setNomeLogista("Cervejaria Da Região");
-        transaction2.setValor("41.20");
+        transaction3.setNomeLogista("Cervejaria Da Região");
+        transaction3.setValor("R$41.20");
+
+
 
         transactions.add(transaction1);
         transactions.add(transaction2);
