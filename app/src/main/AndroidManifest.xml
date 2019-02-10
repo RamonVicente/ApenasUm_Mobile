@@ -35,6 +35,8 @@
         </activity>
         <activity android:name=".gui.RegisterActivity">
         </activity>
+        <activity android:name=".gui.CardListActivity">
+        </activity>
     </application>
 
 </manifest>

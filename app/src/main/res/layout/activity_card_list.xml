@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <ImageView
+            android:id="@+id/image_card1"
+            android:layout_width="match_parent"
+            android:layout_height="157dp"
+            android:paddingTop="10dp"
+            android:layout_gravity="center" tools:srcCompat="@drawable/card_bradesco" android:visibility="visible"
+            app:srcCompat="@drawable/card_bradesco"/>
+
+    <ImageView
+            android:id="@+id/image_card2"
+            android:layout_width="match_parent"
+            android:layout_height="157dp"
+            android:paddingTop="10dp"
+            android:layout_gravity="center" tools:srcCompat="@drawable/card_nubank" android:visibility="visible"/>
+
+    <ImageView
+            android:id="@+id/image_card3"
+            android:layout_width="match_parent"
+            android:layout_height="157dp"
+            android:paddingTop="10dp"
+            android:layout_gravity="center" tools:srcCompat="@drawable/card_santander" android:visibility="visible"/>
+
+    <ImageView
+            android:id="@+id/image_card4"
+            android:layout_width="match_parent"
+            android:layout_height="157dp"
+            android:paddingTop="10dp"
+            android:layout_gravity="center" tools:srcCompat="@drawable/card_riachuelo" android:visibility="visible"/>
+
+</LinearLayout>
