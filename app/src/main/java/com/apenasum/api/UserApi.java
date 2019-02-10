@@ -17,8 +17,8 @@ public interface UserApi {
      */
     @FormUrlEncoded
     @POST(Constants.URL_LOGIN)
-    Call<LoginResponse> login(@Field("l") String l,
-                              @Field("p") String p);
+    Call<LoginResponse> login(@Field("email") String l,
+                              @Field("password") String p);
 
 
     class LoginResponse {
