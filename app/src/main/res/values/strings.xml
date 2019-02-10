@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">ApenasUm</string>
-    <string name="email_login">Email</string>
-    <string name="senha_login">Password</string>
-    <string name="btn_login">Login</string>
+    <string name="app_name">Apenas Um</string>
+    <string name="name">Nome</string>
+    <string name="email">E-mail</string>
+    <string name="password">Senha</string>
+    <string name="sign">Login</string>
+    <string name="register">Cadastro</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="forgot_pass">esqueci a senha</string>
+    <string name="save">Salvar</string>
 </resources>
