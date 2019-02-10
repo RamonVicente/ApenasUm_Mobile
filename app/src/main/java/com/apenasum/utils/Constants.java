@@ -4,11 +4,11 @@ package com.apenasum.utils;
 public abstract class Constants {
 
 
-    public static final String BASE_URL = "http://157.230.15.200/";
+    public static final String BASE_URL = "http://157.230.15.200";
     public static final String URL_LOGIN = "/api/accounts/login/";
 
 
-    public static String PASS = "senha";
+    public static String PASS = "abc102030";
     public static String USER = "USER";
     public static String USER_ID = "USER_ID";
     public static String USER_CPF = "USER_CPF";

@@ -15,17 +15,17 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class UserRequest {
+public class CardRequest {
 
     /**
      * SingleTon to not invoke many different Objects
      */
-    private static final UserRequest INSTANCE = new UserRequest();
+    private static final CardRequest INSTANCE = new CardRequest();
 
-    private UserRequest() {
+    private CardRequest() {
     }
 
-    public static UserRequest getInstance() {
+    public static CardRequest getInstance() {
         return INSTANCE;
     }
 
@@ -39,7 +39,7 @@ public class UserRequest {
     private UserApi userApi = retrofit.create(UserApi.class);
 
 
-    public void login(final Activity activity, final String email, final String password) {
+    public void getCards(final Activity activity) {
         if (Validations.isConnected(activity)) {
 
 //todo colocar campos de email do edittext

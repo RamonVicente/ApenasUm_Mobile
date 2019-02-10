@@ -3,8 +3,14 @@ package com.apenasum.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import com.apenasum.fragments.CardFragment;
+import com.apenasum.R;
 import com.apenasum.api.UserApi;
-import com.apenasum.model.User;
+import com.apenasum.gui.HomeActivity;
 
 public abstract class Util {
 
@@ -23,6 +29,53 @@ public abstract class Util {
         editor.putString(Constants.USER_PASS, user.getPassword());
 
         editor.commit();
+    }
+
+    public static void changePageFragment(HomeActivity activity, @Nullable String nameItemMenu) {
+
+        String tag = activity.getResources().getString(R.string.cards);
+
+        Class fragmentClass = null;
+
+        if (nameItemMenu != null) {
+
+            if (nameItemMenu.contentEquals(activity.getResources().getString(R.string.cards))) {
+
+                fragmentClass = CardFragment.class;
+                tag = activity.getResources().getString(R.string.cards);
+
+            }
+        }
+        FragmentManager fragmentManager = activity.getSupportFragmentManager();
+        changeFragment(activity, fragmentManager, fragmentClass, tag);
+
+    }
+
+
+    private static void changeFragment(HomeActivity activity, FragmentManager fragmentManager, Class
+            fragmentClass, String tag) {
+
+        Fragment fragment = null;
+        fragmentManager = activity.getSupportFragmentManager();
+
+        Fragment frag = fragmentManager.findFragmentByTag(tag);
+
+
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        activity.getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.frame, fragment, tag)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .addToBackStack(fragment.getClass().getName())
+                .commit();
+        activity.getSupportFragmentManager();
+
     }
 
 }
